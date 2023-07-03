@@ -1,0 +1,21 @@
+ -- added in C:/Windows/System32/Drivers/etc/hosts -> --
+127.0.0.1 	EXERCISE-1.local
+
+ -- added/edited in xampp/apache/conf/extra/httpd-vhosts.conf -> running multiple websites on a single machine -> virtual host --
+<VirtualHost *:80>
+    ##ServerAdmin webmaster@dummy-host.example.com
+    DocumentRoot "C:/xampp/htdocs/PHP/EXERCISE-1/public"    <- DocumentRoot for index for example /
+    ServerName EXERCISE-1.local     <- ServerName changed and added in hosts
+    ##ServerAlias www.dummy-host.example.com
+    ##ErrorLog "logs/dummy-host.example.com-error.log"
+    ##CustomLog "logs/dummy-host.example.com-access.log" common
+
+    <IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+
+    RewriteRule ^ /index.php [L]
+    </IfModule>
+</VirtualHost>

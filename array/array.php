@@ -28,4 +28,4 @@ $array2 = [4,5,6];
 $array3 = array_map(fn($number1,$number2)=>$number1*$number2,$array1,$array2);
 notEyePain($array3);
 
-//
+// asort,ksort,usort
